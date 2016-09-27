@@ -13,6 +13,7 @@
 		52D941B21D9ACB9E002D678C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D941B01D9ACB9E002D678C /* Main.storyboard */; };
 		52D941BD1D9ACB9E002D678C /* MachineEvolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D941BC1D9ACB9E002D678C /* MachineEvolutionTests.swift */; };
 		52D941C81D9ACB9E002D678C /* MachineEvolutionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D941C71D9ACB9E002D678C /* MachineEvolutionUITests.swift */; };
+		52D941DC1D9B238A002D678C /* Organism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D941DB1D9B238A002D678C /* Organism.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		52D941C31D9ACB9E002D678C /* MachineEvolutionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MachineEvolutionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D941C71D9ACB9E002D678C /* MachineEvolutionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineEvolutionUITests.swift; sourceTree = "<group>"; };
 		52D941C91D9ACB9E002D678C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52D941DB1D9B238A002D678C /* Organism.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organism.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				52D941AA1D9ACB9E002D678C /* AppDelegate.swift */,
 				52D941AC1D9ACB9E002D678C /* ViewController.swift */,
+				52D941DB1D9B238A002D678C /* Organism.swift */,
 				52D941AE1D9ACB9E002D678C /* Assets.xcassets */,
 				52D941B01D9ACB9E002D678C /* Main.storyboard */,
 				52D941B31D9ACB9E002D678C /* Info.plist */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D941AD1D9ACB9E002D678C /* ViewController.swift in Sources */,
+				52D941DC1D9B238A002D678C /* Organism.swift in Sources */,
 				52D941AB1D9ACB9E002D678C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

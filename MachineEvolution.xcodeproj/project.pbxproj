@@ -11,8 +11,6 @@
 		52D941AD1D9ACB9E002D678C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D941AC1D9ACB9E002D678C /* ViewController.swift */; };
 		52D941AF1D9ACB9E002D678C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D941AE1D9ACB9E002D678C /* Assets.xcassets */; };
 		52D941B21D9ACB9E002D678C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D941B01D9ACB9E002D678C /* Main.storyboard */; };
-		52D941BD1D9ACB9E002D678C /* MachineEvolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D941BC1D9ACB9E002D678C /* MachineEvolutionTests.swift */; };
-		52D941C81D9ACB9E002D678C /* MachineEvolutionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D941C71D9ACB9E002D678C /* MachineEvolutionUITests.swift */; };
 		52D941DC1D9B238A002D678C /* Organism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D941DB1D9B238A002D678C /* Organism.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,11 +39,7 @@
 		52D941B11D9ACB9E002D678C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52D941B31D9ACB9E002D678C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D941B81D9ACB9E002D678C /* MachineEvolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MachineEvolutionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52D941BC1D9ACB9E002D678C /* MachineEvolutionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineEvolutionTests.swift; sourceTree = "<group>"; };
-		52D941BE1D9ACB9E002D678C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D941C31D9ACB9E002D678C /* MachineEvolutionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MachineEvolutionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52D941C71D9ACB9E002D678C /* MachineEvolutionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineEvolutionUITests.swift; sourceTree = "<group>"; };
-		52D941C91D9ACB9E002D678C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D941DB1D9B238A002D678C /* Organism.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organism.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,8 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				52D941A91D9ACB9E002D678C /* MachineEvolution */,
-				52D941BB1D9ACB9E002D678C /* MachineEvolutionTests */,
-				52D941C61D9ACB9E002D678C /* MachineEvolutionUITests */,
 				52D941A81D9ACB9E002D678C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,24 +97,6 @@
 				52D941B31D9ACB9E002D678C /* Info.plist */,
 			);
 			path = MachineEvolution;
-			sourceTree = "<group>";
-		};
-		52D941BB1D9ACB9E002D678C /* MachineEvolutionTests */ = {
-			isa = PBXGroup;
-			children = (
-				52D941BC1D9ACB9E002D678C /* MachineEvolutionTests.swift */,
-				52D941BE1D9ACB9E002D678C /* Info.plist */,
-			);
-			path = MachineEvolutionTests;
-			sourceTree = "<group>";
-		};
-		52D941C61D9ACB9E002D678C /* MachineEvolutionUITests */ = {
-			isa = PBXGroup;
-			children = (
-				52D941C71D9ACB9E002D678C /* MachineEvolutionUITests.swift */,
-				52D941C91D9ACB9E002D678C /* Info.plist */,
-			);
-			path = MachineEvolutionUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +245,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D941BD1D9ACB9E002D678C /* MachineEvolutionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D941C81D9ACB9E002D678C /* MachineEvolutionUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +481,7 @@
 				52D941CE1D9ACB9E002D678C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52D941CF1D9ACB9E002D678C /* Build configuration list for PBXNativeTarget "MachineEvolutionTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +490,7 @@
 				52D941D11D9ACB9E002D678C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52D941D21D9ACB9E002D678C /* Build configuration list for PBXNativeTarget "MachineEvolutionUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +499,7 @@
 				52D941D41D9ACB9E002D678C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -13,16 +13,17 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let quark = Organism(orgName: "Quark", orgVelocity: 0, orgStamina: 0, orgIsSick: false)
-
-        
-        for _ in 0..<100 {
-            quark.mutate()
-            quark.runDistance()
-            quark.printStats()
+        var organisms: [Organism] = []
+        for i in 0..<100 {
+            organisms.append(Organism(orgName: "Q\(i)", orgVelocity: 0.0, orgStamina: 0, orgIsSick: false))
         }
         
+        var generation: Generation = Generation(organismsHere: organisms)
         
+        generation.mutateAll()
+        generation.runAll()
+        generation.printAllStats()
+        print(generation.numberSick())
     }
 
     override var representedObject: Any? {

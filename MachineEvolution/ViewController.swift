@@ -13,7 +13,16 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let quark = Organism(orgName: "Quark", orgVelocity: 0, orgStamina: 0, orgIsSick: false)
+
+        
+        for _ in 0..<100 {
+            quark.mutate()
+            quark.runDistance()
+            quark.printStats()
+        }
+        
+        
     }
 
     override var representedObject: Any? {

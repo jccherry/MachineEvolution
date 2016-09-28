@@ -15,8 +15,10 @@ class Organism {
     var stamina: Int
     var isSick: Bool
     var lastDistance: Double = 0
-    var maxDistance: Double = 0
+    var maxDistance: Double = -1 //set to -1 because by default the mutation can only go up to -.13333...
+    var minDistance: Double = 1 //set to 1 because by default the mutation can only go up to .13333...
     var name: String
+    var isDead: Bool = false
     
     //initializers
     init(orgName: String, orgVelocity: Double, orgStamina: Int, orgIsSick: Bool){
@@ -45,6 +47,9 @@ class Organism {
         
         if lastDistance > maxDistance {
             maxDistance = lastDistance
+        }
+        if lastDistance < minDistance {
+            minDistance = lastDistance
         }
     }
     
@@ -87,14 +92,18 @@ class Organism {
 
     }
     
+    func kill() {
+        isDead = true
+    }
     
     func printStats() {
         print("---\(name)'s Statistics---")
         print("Velocity: \(velocity) m/s")
         print("Stamina: \(stamina) s")
         print("Sickness Status: \(isSick)")
-        print("Last Distance: \(lastDistance)")
-        print("Furthest Distance: \(maxDistance)")
+        print("Shortest Distance: \(minDistance)")
+        print("Last Distance: \(lastDistance) m")
+        print("Furthest Distance: \(maxDistance) m")
         
     }
 }

@@ -14,16 +14,26 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         var organisms: [Organism] = []
-        for i in 0..<100 {
+        for i in 0..<1000 {
             organisms.append(Organism(orgName: "Q\(i)", orgVelocity: 0.0, orgStamina: 0, orgIsSick: false))
         }
         
-        var generation: Generation = Generation(organismsHere: organisms)
+        let generation: Generation = Generation(organismsHere: organisms, genName: "Gen X")
         
-        generation.mutateAll()
+        for _ in 0..<100{
+            generation.mutateAll()
+        }
+        
+        
         generation.runAll()
-        generation.printAllStats()
-        print(generation.numberSick())
+        //generation.printAllStats()
+        generation.deathCycle()
+        generation.printGenStats()
+        generation.bottomDistanceOrganism().printStats()
+        generation.medianDistanceOrganism().printStats()
+        generation.topDistanceOrganism().printStats()
+        
+        
     }
 
     override var representedObject: Any? {

@@ -12,28 +12,39 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var starterOrganisms: [Organism] = []
+        for i in 0..<100 {
+            starterOrganisms.append(Organism(orgName: "Q\(i)", orgVelocity: 0.0, orgStamina: 0, orgIsSick: false))
+        }
+        
+        var generations: [Generation] = []
+        
+        generations.append(Generation(organismsHere: starterOrganisms, genName: "Gen0"))
+        generations[0].mutateAll()
+        
+        for i in 0..<100 {
+            generations[i].mutateChildren()
+            generations[i].runAll()
+            
+            if i % 100 == 0 {
+                print("Generation \(i)======================================================")
+                
+                print("Worst Organism")
+                generations[i].bottomFitnessOrganism().printStats()
+                print("Median Organism")
+                generations[i].medianFitnessOrganism().printStats()
+                print("Best Organism")
+                generations[i].topFitnessOrganism().printStats()
+            }
 
-        var organisms: [Organism] = []
-        for i in 0..<1000 {
-            organisms.append(Organism(orgName: "Q\(i)", orgVelocity: 0.0, orgStamina: 0, orgIsSick: false))
+
+            generations[i].deathCycle()
+            generations.append(Generation(organismsHere: generations[i].produceOffspring(), genName: "Gen\(i+1)"))
         }
-        
-        let generation: Generation = Generation(organismsHere: organisms, genName: "Gen X")
-        
-        for _ in 0..<100{
-            generation.mutateAll()
-        }
-        
-        
-        generation.runAll()
-        //generation.printAllStats()
-        generation.deathCycle()
-        generation.printGenStats()
-        generation.bottomDistanceOrganism().printStats()
-        generation.medianDistanceOrganism().printStats()
-        generation.topDistanceOrganism().printStats()
-        
-        
+     
+        generations[generations.count-1].printGenStats()
+        generations[generations.count-1].printLifeStats()
     }
 
     override var representedObject: Any? {

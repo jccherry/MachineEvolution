@@ -19,6 +19,8 @@ class Organism {
     var minDistance: Double = 1 //set to 1 because by default the mutation can only go up to .13333...
     var name: String
     var isDead: Bool = false
+    var fitnessLevel: Double = 0
+    var isChild: Bool = false
     
     //initializers
     init(orgName: String, orgVelocity: Double, orgStamina: Int, orgIsSick: Bool){
@@ -34,10 +36,6 @@ class Organism {
         
         distance = Double(stamina) * velocity
         
-        if isSick{
-            distance -= abs(distance)/3
-        }
-        
         return distance
     }
     
@@ -45,12 +43,16 @@ class Organism {
     func runDistance(){
         lastDistance = run()
         
+        
+        
         if lastDistance > maxDistance {
             maxDistance = lastDistance
         }
         if lastDistance < minDistance {
             minDistance = lastDistance
         }
+        
+        setFitnessLevel()
     }
     
     func mutate() {
@@ -82,6 +84,7 @@ class Organism {
             }
         }
 
+
         if sickOdds <= 0.05{
             if isSick {
                 isSick = false
@@ -96,14 +99,33 @@ class Organism {
         isDead = true
     }
     
+    func setFitnessLevel(){
+        fitnessLevel = lastDistance //set fitnesslevel to whatever you want
+        
+        if isSick{
+            fitnessLevel -= abs(fitnessLevel)/3
+        }
+        
+    }
+    
+    func amOffspring() {
+        isChild = true
+    }
+    
+    func amParent() {
+        isChild = false
+    }
+    
     func printStats() {
         print("---\(name)'s Statistics---")
         print("Velocity: \(velocity) m/s")
         print("Stamina: \(stamina) s")
         print("Sickness Status: \(isSick)")
+        print("Child Status: \(isChild)")
         print("Shortest Distance: \(minDistance)")
-        print("Last Distance: \(lastDistance) m")
         print("Furthest Distance: \(maxDistance) m")
+        print("Last Distance: \(lastDistance) m")
+        print("Fitness Level: \(fitnessLevel)")
         
     }
 }
